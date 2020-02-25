@@ -45,5 +45,12 @@ public class App {
 
         System.out.println("-");
 
+        program.paste(2);
+        program.print(2);
+
+        // wrong editor - all is ok?
+        program.paste(5);
+        program.print(10);
+
     }
 }

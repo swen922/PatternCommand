@@ -25,7 +25,7 @@ public class Program {
     /** Тута пошли как бы кнопки в программе */
 
     public void copy(int pos) {
-        if (editors.get(pos) != null) {
+        if (checkPosition(pos)) {
             Command command = new CommandCopy(editors.get(pos));
             command.execute();
             String clip = editors.get(pos).getClipboard();
@@ -36,7 +36,7 @@ public class Program {
     }
 
     public void cut(int pos) {
-        if (editors.get(pos) != null) {
+        if (checkPosition(pos)) {
             Command command = new CommandCut(editors.get(pos));
             command.execute();
             String clip = editors.get(pos).getClipboard();
@@ -47,30 +47,37 @@ public class Program {
     }
 
     public void paste(int pos) {
-        if (editors.get(pos) != null) {
+        if (checkPosition(pos)) {
             Command command = new CommandPaste(editors.get(pos));
             command.execute();
         }
     }
 
     public void undo(int pos) {
-        if (editors.get(pos) != null) {
+        if (checkPosition(pos)) {
             Command command = new CommandUndo(editors.get(pos));
             command.execute();
         }
     }
 
     public void redo(int pos) {
-        if (editors.get(pos) != null) {
+        if (checkPosition(pos)) {
             Command command = new CommandRedo(editors.get(pos));
             command.execute();
         }
     }
 
     public void print(int pos) {
-        if (editors.get(pos) != null) {
+        if (checkPosition(pos)) {
             editors.get(pos).print();
         }
+    }
+
+    private boolean checkPosition(int pos) {
+        if (pos < 0 || pos >= editors.size()) {
+            return false;
+        }
+        return true;
     }
 
 
