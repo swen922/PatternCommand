@@ -17,7 +17,7 @@ public abstract class Command {
     public void saveBackup() {
         undoText = editor.getEditText();
     }
-    
+
     public void undo() {
         if (undoText != null) {
             redoText = editor.getEditText();
@@ -29,8 +29,7 @@ public abstract class Command {
     public void redo() {
         editor.setEditText(redoText);
     }
-
-
+    
     public abstract void execute();
 
 }
