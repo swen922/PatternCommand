@@ -11,9 +11,9 @@ public class CommandCut extends Command {
     @Override
     public void execute() {
         saveBackup();
-        getEditor().setClipboard(getEditor().getEditText());
-        getEditor().setEditText("");
-        getEditor().addUndo(this);
+        editor.setClipboard(editor.getEditText());
+        editor.setEditText("");
+        editor.addUndo(this);
     }
 
 }

@@ -6,23 +6,18 @@ import editor.Editor;
 
 public abstract class Command {
 
-    private Editor editor;
-    private String undoText = "";
-    private String redoText = "";
+    protected Editor editor;
+    protected String undoText = "";
+    protected String redoText = "";
 
     public Command(@NotNull Editor editor) {
         this.editor = editor;
     }
 
-    public Editor getEditor() {
-        return editor;
-    }
-
     public void saveBackup() {
         undoText = editor.getEditText();
     }
-
-
+    
     public void undo() {
         if (undoText != null) {
             redoText = editor.getEditText();

@@ -10,6 +10,6 @@ public class CommandUndo extends Command {
 
     @Override
     public void execute() {
-        getEditor().undo();
+        editor.undo();
     }
 }

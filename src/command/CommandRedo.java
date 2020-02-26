@@ -10,6 +10,6 @@ public class CommandRedo extends Command {
 
     @Override
     public void execute() {
-        getEditor().redo();
+        editor.redo();
     }
 }

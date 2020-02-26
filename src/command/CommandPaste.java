@@ -11,8 +11,8 @@ public class CommandPaste extends Command {
     @Override
     public void execute() {
         saveBackup();
-        getEditor().setEditText(getEditor().getClipboard());
-        getEditor().addUndo(this);
+        editor.setEditText(editor.getClipboard());
+        editor.addUndo(this);
     }
 
 }

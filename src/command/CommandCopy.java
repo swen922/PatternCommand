@@ -10,7 +10,7 @@ public class CommandCopy extends Command {
 
     @Override
     public void execute() {
-        getEditor().setClipboard(getEditor().getEditText());
+        editor.setClipboard(editor.getEditText());
     }
 
 }
